@@ -9,8 +9,20 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+	e.preventDefault();
 	console.log("Javascript connected!");
+	$('#name').click(anagram);
+	
 }
+
+function anagram(e){
+		e.preventDefault();
+		console.log("clicked")
+		var name = $(this).text();
+		name = anagrammedName(name);
+		$(this).text(name);
+}
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
@@ -44,3 +56,4 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+	
